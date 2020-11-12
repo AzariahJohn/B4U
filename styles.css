@@ -1,0 +1,148 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.intro{
+    height: 100vh;
+}
+
+.intro video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.intro h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    text-align: center;
+}
+
+section{
+    height: 100vh;
+    background-color: #acacac;
+}
+
+section h1{
+    padding-top: 300px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.navBar {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 90px;
+    background-color: #db9f00;
+}
+
+.logo{
+    float: left;
+    margin-top: 25px;
+    margin-left: 40px;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;    
+    width: 50%;
+    height: 100%;
+    justify-content:  space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-links li a {
+    color: #222831;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px){
+    .nav-links{
+        position: fixed;
+        background-color: #222831;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -15%);
+        -webkit-clip-path: circle(100px at 90% -15%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    
+    .nav-links.open{
+        clip-path: circle(1500px at 90% -15%);
+        -webkit-clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+    
+    .nav-links li a{
+        color: #fbd46d;
+        font-size: 30px;
+    }
+    
+    .nav-links li{
+        margin-top: 100px;
+        margin-bottom: 20px;
+    }
+    
+    .line {
+        width: 30px;
+        height: 3px;
+        background: #222831;
+        margin: 5px;
+    }
+    
+    .navBar{
+        position: fixed;
+    }
+    
+    .hamburger{
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        background-color: #db9f00; 
+        border-radius: 50px;
+        height: 77px;
+        width: 77px;
+    }
+    
+    .lineAdjust{
+        margin-top: 30px;
+        margin-left: 18px;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+    }   
+    
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }    
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }    
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }    
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.8s;
+    }   
+    li.fade{
+        opacity: 1;
+    }
+}
